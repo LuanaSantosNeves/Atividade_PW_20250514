@@ -1,3 +1,3 @@
-# Atividade Prática 14/05/2025
+# Aula 21/05/2025
 
-Ricardo Maroquio Bernardo
+Criar listagem de FormasPagamento(id, nome, desconto)

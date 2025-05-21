@@ -26,6 +26,7 @@ def obter_todos() -> list[Cliente]:
     cursor = conn.cursor()
     cursor.execute(OBTER_TODOS)
     tuplas = cursor.fetchall()
+    conn.close()
     clientes = [
         Cliente(
             id=tupla[0], 
@@ -35,5 +36,4 @@ def obter_todos() -> list[Cliente]:
             telefone=tupla[4],
             senha=tupla[5]) 
             for tupla in tuplas]
-    conn.close()
     return clientes

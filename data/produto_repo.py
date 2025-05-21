@@ -25,13 +25,13 @@ def obter_todos() -> list[Produto]:
     cursor = conn.cursor()
     cursor.execute(OBTER_TODOS)
     tuplas = cursor.fetchall()
+    conn.close()
     produtos = [
         Produto(
             id=tupla[0], 
             nome=tupla[1], 
             descricao=tupla[2], 
             preco=tupla[3], 
-            quantidade=tupla[4]) 
+            quantidade=tupla[4])
             for tupla in tuplas]
-    conn.close()
     return produtos
